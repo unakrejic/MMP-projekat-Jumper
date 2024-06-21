@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameFinished : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    // Ova metoda se poziva kada neki objekat uÄ‘e u 2D Collider koji je postavljen kao IsTrigger
+     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Proverava da li objekat koji je uÅ¡ao u koliziju ima tag "Player"
         if (collision.CompareTag("Player"))
         {
+            // Ako objekat ima tag "Player", poziva se metoda FinishGame
             FinishGame();
         }
 
@@ -17,7 +20,6 @@ public class GameFinished : MonoBehaviour
 
     void FinishGame()
     {
-        Debug.Log("Završili ste igricu!"); // Prikaz poruke u konzoli
-                                           // Možete dodati dodatne akcije ovde, kao što je prikazivanje UI poruke ili prelazak na drugu scenu
+        Debug.Log("Zavrï¿½ili ste igricu!"); // Prikaz poruke u konzoli u Unity programu
     }
 }
